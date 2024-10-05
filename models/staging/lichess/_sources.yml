@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: lichess
+    database: chessgames
+    schema: dev
+    tables:
+      - name: raw_games_lichess
