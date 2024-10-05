@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_games
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_move_times
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_results
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_openings
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_start_end_timestamps
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_time_class_control
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
