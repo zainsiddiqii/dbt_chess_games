@@ -7,21 +7,8 @@ with games as (
     game_id,
     url,
     is_rated,
-    {# Create my_accuracy, opponent_accuracy, my_rating, opponent_rating #}
-    {% for column in my_opponent_columns %}
-      {% for type in my_or_opponent %}
-        case
-          when colour = 'white'
-          {% if type == "my" %}
-            then white_{{ column }}
-          else black_{{ column }}
-          {% else %}
-            then black_{{ column }}
-          else white_{{ column }}
-          {% endif %}
-        end as {{ type }}_{{ column }},
-      {% endfor %}    
-    {% endfor %}
+    -- create my_accuracy, opponent_accuracy, my_rating, opponent_rating
+    {{ map_white_black_to_my_opponent(my_opponent_columns, my_or_opponent) }}
     colour,
     opponent_id,
     opponent_username,
