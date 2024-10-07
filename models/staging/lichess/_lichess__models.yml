@@ -6,16 +6,22 @@ models:
       materialized: view
     columns:
       - name: game_id
-        tests:
+        data_tests:
           - unique
           - not_null
+      - name: colour
+        data_tests:
+          - accepted_values:
+              values:
+                - "white"
+                - "black"
   
   - name: stg_lichess__move_times
     config:
       materialized: view
     columns:
       - name: game_id
-        tests:
+        data_tests:
           - unique
           - not_null
 
@@ -24,7 +30,7 @@ models:
       materialized: view
     columns:
       - name: game_id
-        tests:
+        data_tests:
           - unique
           - not_null
 
@@ -33,7 +39,7 @@ models:
       materialized: view
     columns:
       - name: game_id
-        tests:
+        data_tests:
           - unique
           - not_null
 
@@ -42,7 +48,7 @@ models:
       materialized: view
     columns:
       - name: game_id
-        tests:
+        data_tests:
           - unique
           - not_null
 
@@ -51,6 +57,15 @@ models:
       materialized: view
     columns:
       - name: game_id
-        tests:
+        data_tests:
           - unique
           - not_null
+      - name: time_class
+        data_tests:
+          - accepted_values:
+              values:
+                - "Ultrabullet"
+                - "Bullet"
+                - "Blitz"
+                - "Rapid"
+                - "Classical"
