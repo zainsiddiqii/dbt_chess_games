@@ -1,0 +1,14 @@
+result,game_status,my_result,opponent_result,result_method
+d,draw,draw,draw,
+d,aborted,draw,draw,abortion
+d,stalemate,draw,draw,stalemate
+w,mate,win,loss,checkmate
+w,resign,win,loss,resignation
+w,outoftime,win,loss,timeout
+w,timeout,win,loss,abandonment
+w,cheat,win,loss,opponent cheating
+l,mate,loss,win,checkmate
+l,resign,loss,win,resignation
+l,outoftime,loss,win,timeout
+l,timeout,loss,win,abandonment
+l,cheat,loss,win,opponent cheating

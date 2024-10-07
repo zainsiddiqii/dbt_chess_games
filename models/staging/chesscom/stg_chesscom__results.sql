@@ -10,7 +10,7 @@ results as (
   from {{ source("chesscom", "raw_games_chesscom") }} as games
 
   left join
-    {{ ref("result_mapping_chesscom") }} as result_mapping
+    {{ ref("chesscom__result_mapping") }} as result_mapping
     on games.colour = result_mapping.colour
     and games.white_result = result_mapping.white_result
     and games.black_result = result_mapping.black_result

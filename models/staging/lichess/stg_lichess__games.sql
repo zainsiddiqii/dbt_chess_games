@@ -15,10 +15,11 @@ with games as (
     opponent_country,
     opponent_is_verified,
     opponent_status,
-    total_moves,
+    total_moves as move_number_reached,
+    array_length(moves) as total_moves,
     moves
 
-  from {{ source("chesscom", "raw_games_chesscom") }}
+  from {{ source("lichess", "raw_games_lichess") }}
 
 )
 

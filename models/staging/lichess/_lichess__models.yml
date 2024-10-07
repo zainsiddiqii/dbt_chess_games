@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_games
+  - name: stg_lichess__games
     config:
       materialized: view
     columns:
@@ -10,7 +10,7 @@ models:
           - unique
           - not_null
   
-  - name: stg_move_times
+  - name: stg_lichess__move_times
     config:
       materialized: view
     columns:
@@ -19,7 +19,7 @@ models:
           - unique
           - not_null
 
-  - name: stg_results
+  - name: stg_lichess__results
     config:
       materialized: view
     columns:
@@ -28,7 +28,7 @@ models:
           - unique
           - not_null
 
-  - name: stg_openings
+  - name: stg_lichess__openings
     config:
       materialized: view
     columns:
@@ -37,7 +37,7 @@ models:
           - unique
           - not_null
 
-  - name: stg_start_end_timestamps
+  - name: stg_lichess__start_end_timestamps
     config:
       materialized: view
     columns:
@@ -46,7 +46,7 @@ models:
           - unique
           - not_null
 
-  - name: stg_time_class_control
+  - name: stg_lichess__time_class_control
     config:
       materialized: view
     columns:
