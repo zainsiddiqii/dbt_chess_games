@@ -10,7 +10,7 @@ with time_classes as (
 
   from {{ source("lichess", "raw_games_lichess") }}
 
-  where time_class in ('bullet', 'rapid', 'blitz')
+  where time_class in ('ultraBullet', 'bullet', 'rapid', 'blitz', 'classical')
 
 ),
 
