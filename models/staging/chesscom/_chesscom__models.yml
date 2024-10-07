@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_chesscom__games
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_chesscom__move_times
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_chesscom__results
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_chesscom__openings
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_chesscom__start_end_timestamps
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_chesscom__time_class_control
+    config:
+      materialized: view
+    columns:
+      - name: game_id
+        tests:
+          - unique
+          - not_null

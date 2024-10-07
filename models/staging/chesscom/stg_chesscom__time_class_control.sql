@@ -5,7 +5,7 @@ with time_classes as (
     time_class,
     time_control,
     -- 3+0, 5+1 etc
-    split(time_control, '+')[offset(0)]      as main,
+    split(time_control, '+')[safe_offset(0)]      as main,
     split(time_control, '+')[safe_offset(1)] as increment
 
   from {{ source("chesscom", "raw_games_chesscom") }}
