@@ -1,0 +1,10 @@
+models:
+  - name: int_game_information
+    config:
+      materialized: view
+    description: Intermediate model combining relevant game information from both lichess and chesscom sources.
+    columns:
+      - name: game_id
+        description: The unique game id provided by the platform.
+              
+      
