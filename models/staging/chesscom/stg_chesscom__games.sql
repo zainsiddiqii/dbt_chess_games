@@ -5,7 +5,7 @@ with games as (
 
   select
     game_id,
-    url,
+    url as game_url,
     is_rated,
     -- create my_accuracy, opponent_accuracy, my_rating, opponent_rating
     {{ map_white_black_to_my_opponent(my_opponent_columns, my_or_opponent) }}

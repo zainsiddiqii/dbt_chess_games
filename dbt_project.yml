@@ -44,6 +44,3 @@ models:
       +materialized: table
     marts:
       +materialized: table
-
-data_tests:
-  +store_failures: true
