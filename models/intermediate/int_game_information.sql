@@ -1,5 +1,5 @@
 with chesscom_game_info as (
-    {{ get_intermediate_model("chesscom") }}
+  {{ get_intermediate_model("chesscom") }}
 ),
 
 lichess_game_info as (

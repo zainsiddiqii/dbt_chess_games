@@ -66,6 +66,9 @@
         games.total_moves,
         games.moves,
         move_times.move_times,
+        results.my_result,
+        results.opponent_result,
+        results.result_method,
         '{{ platform }}' as source
 
     from {{ ref('stg_' ~ platform ~ '__games') }} as games
