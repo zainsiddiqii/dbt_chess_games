@@ -67,7 +67,7 @@ fact_columns as (
   from {{ ref("int_game_information") }}
 ),
 
-fact_game as (
+fct_game as (
   select
     game_sid,
     opening_sid,
@@ -89,4 +89,4 @@ fact_game as (
     on fact_columns.game_id = joining_dims.game_id
 )
 
-select * from fact_game
+select * from fct_game
