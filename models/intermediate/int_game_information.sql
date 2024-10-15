@@ -9,3 +9,5 @@ lichess_game_info as (
 select * from chesscom_game_info
 union all
 select * from lichess_game_info
+
+where result_method is not null

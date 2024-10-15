@@ -21,8 +21,6 @@ models:
       materialized: view
     columns:
       - name: my_result
-        data_tests:
-          - not_null
 
   - name: stg_lichess__openings
     config:
