@@ -10,6 +10,7 @@ models:
         description: unique key to identify each date
         constraints:
           - type: primary_key
+          - type: not_null
         data_tests:
           - unique
           - not_null
