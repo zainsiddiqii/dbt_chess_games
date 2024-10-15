@@ -8,7 +8,7 @@ models:
     columns:
       - name: game_id
         description: unique game id provided by the platform.
-        tests:
+        data_tests:
           - unique
           - not_null
       - name: game_url
@@ -25,7 +25,7 @@ models:
         description: whether the game is rated or not, i.e. changes the elo of players involved or not
       - name: time_class
         description: time class of the game, like 'Rapid' or 'Blitz'
-        tests:
+        data_tests:
           - accepted_values:
               values:
                 - "Ultrabullet"
@@ -49,7 +49,7 @@ models:
         description: the name of the opening as provided by the encyclopaedia of chess openings
       - name: colour
         description: colour of my pieces during the game
-        tests:
+        data_tests:
           - accepted_values:
               values:
                 - "white"
@@ -78,7 +78,7 @@ models:
         description: count of total moves played, if move_number_reached is 40, total_moves could be 79 or 80
       - name: my_result
         description: whether the game was a win, loss, or draw for me
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values:
@@ -87,7 +87,7 @@ models:
                 - "draw"
       - name: opponent_result
         description: whether the game was a win, loss, or draw for my opponent
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values:
@@ -96,7 +96,7 @@ models:
                 - "draw"
       - name: result_method
         description: the method by which the result occurs, e.g. win by resignation
-        tests:
+        data_tests:
           - not_null
           - accepted_values:
               values:
