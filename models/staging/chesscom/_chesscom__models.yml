@@ -37,6 +37,6 @@ models:
         data_tests:
           - accepted_values:
               values:
-                - "Bullet"
-                - "Blitz"
-                - "Rapid"
+                - "bullet"
+                - "blitz"
+                - "rapid"

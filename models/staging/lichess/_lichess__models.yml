@@ -40,8 +40,8 @@ models:
         data_tests:
           - accepted_values:
               values:
-                - "Ultrabullet"
-                - "Bullet"
-                - "Blitz"
-                - "Rapid"
-                - "Classical"
+                - "ultrabullet"
+                - "bullet"
+                - "blitz"
+                - "rapid"
+                - "classical"

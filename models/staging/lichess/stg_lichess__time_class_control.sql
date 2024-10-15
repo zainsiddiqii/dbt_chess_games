@@ -34,7 +34,7 @@ all_data as (
     cast(minutes as int)           as minutes,
     cast(seconds as int)           as seconds,
     increment                      as increment_amount,
-    initcap(time_class)            as time_class,
+    time_class,
     concat(
       minutes,
       '+',
