@@ -13,7 +13,8 @@ unique_games as (
     date(end_timestamp_utc)     as end_date_utc,
     date(end_datetime_actual)   as end_date_actual,
     time(end_timestamp_utc)     as end_time_utc,
-    time(end_datetime_actual)   as end_time_actual
+    time(end_datetime_actual)   as end_time_actual,
+    colour
 
   from {{ ref("int_game_information") }}
 ),
