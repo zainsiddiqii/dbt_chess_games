@@ -71,8 +71,8 @@ fct_game as (
   select
     game_sid,
     opening_sid,
-    time_control_sid
-      as opponent_sid,
+    time_control_sid,
+    opponent_sid,
     result_sid,
     my_rating,
     opponent_rating,

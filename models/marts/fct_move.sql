@@ -71,11 +71,11 @@ colours_added as (
 joins_and_mappings as (
   select
     *,
-    coalesce (move_colour = my_colour, false) as is_my_move,
+    coalesce(move_colour = my_colour, false) as is_my_move,
     row_number() over (
       partition by game_id, move_colour
       order by number
-    )                           as move_number,
+    )                                        as move_number,
     case
       when move like '%#'
         then 'checkmate'
@@ -86,7 +86,7 @@ joins_and_mappings as (
       when move like 'O%'
         then 'castles'
       else 'move'
-    end                         as move_type
+    end                                      as move_type
 
   from colours_added
 
@@ -132,7 +132,7 @@ fct_move as (
     final.move,
     final.is_my_move,
     final.move_colour,
-    final.piece,
+    final.piece  as move_piece,
     final.move_type,
     final.move_ts,
     final.time_taken,
@@ -141,7 +141,7 @@ fct_move as (
   from time_taken_calculated as final
 
   left join {{ ref("dim_game") }} as dim_game
-    on dim_game.game_id = final.game_id
+    on final.game_id = dim_game.game_id
 )
 
 select * from fct_move

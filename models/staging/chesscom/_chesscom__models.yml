@@ -12,7 +12,6 @@ models:
                 - "white"
                 - "black"
 
-  
   - name: stg_chesscom__move_times
     config:
       materialized: view

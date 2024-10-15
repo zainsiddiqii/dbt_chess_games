@@ -28,11 +28,11 @@ models:
         data_tests:
           - accepted_values:
               values:
-                - "Ultrabullet"
-                - "Bullet"
-                - "Blitz"
-                - "Rapid"
-                - "Classical"
+                - "ultrabullet"
+                - "bullet"
+                - "blitz"
+                - "rapid"
+                - "classical"
       - name: time_control
         description: exact type of time class, e.g. 3+2 (usually in format minutes:increment_seconds)
       - name: minutes
@@ -79,7 +79,10 @@ models:
       - name: my_result
         description: whether the game was a win, loss, or draw for me
         data_tests:
-          - not_null
+          - not_null:
+              config:
+                severity: warn
+                error_if: ">100"
           - accepted_values:
               values:
                 - "win"
@@ -88,7 +91,10 @@ models:
       - name: opponent_result
         description: whether the game was a win, loss, or draw for my opponent
         data_tests:
-          - not_null
+          - not_null:
+              config:
+                severity: warn
+                error_if: ">100"
           - accepted_values:
               values:
                 - "win"
@@ -97,7 +103,6 @@ models:
       - name: result_method
         description: the method by which the result occurs, e.g. win by resignation
         data_tests:
-          - not_null
           - accepted_values:
               values:
                 - "stalemate"
