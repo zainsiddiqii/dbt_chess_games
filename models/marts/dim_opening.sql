@@ -9,7 +9,7 @@ unique_openings as (
   from {{ ref("int_game_information") }}
 ),
 
-dim_games as (
+transformations_and_id as (
   select
     white_first_move,
     black_first_move,
@@ -18,6 +18,17 @@ dim_games as (
     trim(split_opening[safe_offset(1)]) as opening_variation
 
   from unique_openings
+),
+
+dim_games as (
+  select
+    opening_sid,
+    opening_name,
+    opening_variation,
+    white_first_move,
+    black_first_move
+
+  from transformations_and_id
 )
 
 select * from dim_games

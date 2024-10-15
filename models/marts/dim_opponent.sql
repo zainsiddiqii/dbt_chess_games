@@ -11,12 +11,24 @@ unique_opponents as (
   from {{ ref("int_game_information") }}
 ),
 
-dim_opponent as (
+generate_id as (
   select
     *,
     generate_uuid() as opponent_sid
 
   from unique_opponents
+),
+
+dim_opponent as (
+  select
+    opponent_sid,
+    opponent_id,
+    username,
+    country,
+    status,
+    is_verified
+
+  from generate_id
 )
 
 select * from dim_opponent

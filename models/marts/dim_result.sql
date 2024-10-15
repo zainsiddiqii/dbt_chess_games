@@ -24,12 +24,21 @@ unique_results as (
   from results
 ),
 
-dim_result as (
+generate_id as (
   select
     *,
     generate_uuid() as result_sid
 
   from unique_results
+),
+
+dim_result as (
+  select
+    result_sid,
+    result,
+    result_method
+
+  from generate_id
 )
 
 select * from dim_result
