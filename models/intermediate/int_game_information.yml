@@ -1,5 +1,3 @@
-version: 2
-
 models:
   - name: int_game_information
     description: Intermediate model combining relevant game information from all chess games sources.

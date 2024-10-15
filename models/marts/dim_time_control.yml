@@ -1,0 +1,26 @@
+models:
+  - name: dim_time_control
+    description: dimension table containing information about a time control such as how many seconds or minutes it had, or whether it has increment or not
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: time_control_sid
+        description: unique surrogate key to identify each time control
+        constraints:
+          - type: primary_key
+        data_tests:
+          - unique
+          - not_null
+      - name: time_control
+        description: exact time control in 'minutes'+'increment' format such as 1+0 or 3+2
+      - name: time_class
+        description: class of time control, such as "blitz", "rapid", "ultrabullet" etc
+      - name: minutes
+        description: the starting time given to each player in minutes
+      - name: seconds
+        description: the starting time given to each player in seconds
+      - name: is_increment
+        description: boolean to indicate whether the time_control has increment or not
+      - name: increment_amount
+        description: the amount in seconds of increment per move for each player
