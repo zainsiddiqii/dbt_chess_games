@@ -7,7 +7,11 @@ lichess_game_info as (
 )
 
 select * from chesscom_game_info
+where
+  result_method is not null
+  and total_moves >= 2
 union all
 select * from lichess_game_info
-
-where result_method is not null
+where
+  result_method is not null
+  and total_moves >= 2

@@ -6,6 +6,7 @@ models:
         enforced: true
     columns:
       - name: game_sid
+        data_type: string
         description: unique surrogate key to identify each game (ref to dim_game.game_sid)
         constraints:
           - type: primary_key
@@ -17,6 +18,7 @@ models:
               field: game_sid
               to: ref('dim_game')
       - name: opening_sid
+        data_type: string
         description: (ref to dim_opening.opening_sid)
         constraints:
           - type: foreign_key
@@ -26,6 +28,7 @@ models:
               field: opening_sid
               to: ref('dim_opening')
       - name: time_control_sid
+        data_type: string
         description: (ref to dim_time_control.time_control_sid)
         constraints:
           - type: foreign_key
@@ -35,6 +38,7 @@ models:
               field: time_control_sid
               to: ref('dim_time_control')
       - name: opponent_sid
+        data_type: string
         description: (ref to dim_opponent.opponent_sid)
         constraints:
           - type: foreign_key
@@ -44,6 +48,7 @@ models:
               field: opponent_sid
               to: ref('dim_opponent')
       - name: result_sid
+        data_type: string
         description: (ref to dim_result.result_sid)
         constraints:
           - type: foreign_key
@@ -53,18 +58,26 @@ models:
               field: result_sid
               to: ref('dim_result')
       - name: my_rating
+        data_type: integer
         description: my elo rating on the platform at the start of the game
       - name: opponent_rating
+        data_type: integer
         description: opponent's elo rating on the platform at the start of the game
       - name: my_accuracy
+        data_type: float
         description: my accuracy as calculated by the platform through use of an engine
       - name: opponent_accuracy
+        data_type: float
         description: opponent's accuracy as calculated by the platform through use of an engine
       - name: move_number_reached
+        data_type: integer
         description: e.g. if white and black played 42 moves each (or white 42, black 41) -> 42
       - name: total_moves
+        data_type: integer
         description: e.g. if white and black played 42 and 41 moves -> 83
       - name: game_length
+        data_type: integer
         description: the duration the game lasted in seconds
       - name: rating_change
+        data_type: integer
         description: my rating after the game ends (and my rating at the start of the next game on the same platform)
