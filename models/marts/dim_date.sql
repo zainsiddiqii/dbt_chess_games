@@ -10,8 +10,7 @@ dates_series as (
 
 dim_date as (
   select
-    d                         as full_date,
-    format_date('%F', d)      as date_id,
+    d                         as date_id,
     extract(year from d)      as year,
     extract(week from d)      as year_week,
     extract(day from d)       as month_day,

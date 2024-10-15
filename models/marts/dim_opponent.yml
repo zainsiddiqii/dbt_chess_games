@@ -1,0 +1,24 @@
+models:
+  - name: dim_opponent
+    description: dimension table containing information about an opponent such as their country, username, premium status etc
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: opponent_sid
+        description: unique surrogate key to identify each opponent
+        constraints:
+          - type: primary_key
+        data_tests:
+          - unique
+          - not_null
+      - name: opponent_id
+        description: unique key to identify each opponent provided by the source (chesscom or lichess etc)
+      - name: username
+        description: username of the user at time of extraction of data
+      - name: country
+        description: country shown on username's profile at time of extraction of data
+      - name: status
+        description: shows status of opponent on platform, e.g. "lichess member", "premium" or "closed"
+      - name: is_verified
+        description: boolean to indicate if opponent has a verified profile on the platform
