@@ -37,6 +37,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   chess_games:
+    +persist_docs:
+      relation: true
+      columns: true
     # Applies to all files under models/
     staging:
       +materialized: view
